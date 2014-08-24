@@ -13,6 +13,7 @@ data.y <- rbind(data.y_train,data.y_test)
 data.subject <- rbind(data.subject_train,data.subject_test)
 data.All <- cbind(data.subject,data.y,data.X)
 
+# add names
 names_of_data.All <- c("subject","y",features[,2])
 names(data.All) <- names_of_data.All
 
@@ -34,4 +35,4 @@ names(data.sub_mean_std)[2] <- "activity"
 res=aggregate.data.frame(data.sub_mean_std[,3:length(data.sub_mean_std[1,])],by=list(subject=data.sub_mean_std$subject,activity_type=data.sub_mean_std$activity),FUN = mean)
 
 write.table(res,file="mean_for_each_subject-activity_of_mean_and_std_data.txt",row.name=F)
-
+data.sub_mean_std[which(data.sub_mean_std$subject==1 && data.sub_mean_std$activity == "WALKING"),]

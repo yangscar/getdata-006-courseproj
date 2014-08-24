@@ -10,7 +10,7 @@ The experiments have been carried out with a group of 30 volunteers within an ag
 
 The subject number
 
-## activity type
+## activity-type
 
 Six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
 
