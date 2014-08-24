@@ -32,7 +32,7 @@ names(data.sub_mean_std)[2] <- "activity"
 # 4. Appropriately labels the data set with descriptive variable names. 
 ## I labeled them in step 1 :) according to the features.txt
 # 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-res=aggregate.data.frame(data.sub_mean_std[,3:length(data.sub_mean_std[1,])],by=list(subject=data.sub_mean_std$subject,activity_type=data.sub_mean_std$activity),FUN = mean)
+res=aggregate.data.frame(data.sub_mean_std[,3:length(data.sub_mean_std[1,])],by=list(subject=data.sub_mean_std$subject,"activity-type"=data.sub_mean_std$activity),FUN = mean)
 
 write.table(res,file="mean_for_each_subject-activity_of_mean_and_std_data.txt",row.name=F)
-data.sub_mean_std[which(data.sub_mean_std$subject==1 && data.sub_mean_std$activity == "WALKING"),]
+
